@@ -38,6 +38,12 @@ rms_vect = np.zeros(np.shape(lambda_vect))
 kf = KFold(n_splits=k) # define the split into 2 folds
 kf.get_n_splits(A) # return the number of splitting iterations in the cross validator
 
+# TODO: Someting I read online is that it is a good idea to repeat the KFold 
+#       experiment more than once, each time shuffling the data and using 
+#       different folds. This randomization decreases your chances of 
+#       picking a bad fold by accident. We should add this to our script. 
+#       KFolds has a nice feature where you can set a shuffle flag which 
+#       rearranges the data, and you can also set a random seed for this. 
 for i in range(len(lambda_vect)):
     # this will loop 'k' times
     for train_index, test_index in kf.split(A):
