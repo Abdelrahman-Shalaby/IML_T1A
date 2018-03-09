@@ -6,7 +6,7 @@ from math import sqrt
 
 def compute_test_rms(A_train, y_train, A_test, y_test, lam):
     # Compute the LS weights using the training data 
-    w_ridge = np.linalg.inv(A_train.T*A_train + lam*np.identity(d)) * A.T*y_train
+    w_ridge = np.linalg.inv(A_train.T*A_train + lam*np.identity(10)) * A_train.T*y_train
     
     #Use the weights to evaluate the predictions on the test set
     y_predicted = np.dot(A_test, w_ridge)
