@@ -53,7 +53,6 @@ for i in range(len(lambda_vect)):
 
         # TODO: Shalaby you need to write this function. It's documented in the helper file
         rms_i = compute_test_rms(A_train, y_train, A_test, y_test, lambda_vect[i])
-        #rms_i = 1
 
         rms_vect[i] += rms_i
 
